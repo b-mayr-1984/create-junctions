@@ -45,7 +45,17 @@ $3CB_JunctionList = `
 "@ruha", `
 "@vinjesvingen"
 
+$Anrop_JunctionList = `
+"@cba_a3", `
+"@diwako_dui", `
+"@grad_trenches", `
+"@lambs_danger", `
+"@lambs_suppression", `
+"@zen", `
+"@zen_compat_ace"
+
 $DAA_JunctionList = `
+"@3CB_Factions", `
 "@rhspkl", `
 "@rhsafrf", `
 "@rhsgref", `
@@ -65,10 +75,13 @@ $DAA_JunctionList = `
 "@advanced_sling_loading", `
 "@backpackonchest", `
 "@cba_a3", `
-# "@dui-squad_radar
-# "@task_force_arrowhead_radio_beta", `
-"@grad_sling_helmet", `
-"@gruppe_adler_trenches", `
+"@dui-squad_radar", `
+"@task_force_arrowhead_radio_beta", `
+# "@grad_sling_helmet", `
+# "@gruppe_adler_trenches", `
+"@ILBE_Assault_Pack-Rewrite", `
+"@virolahti-valtatie_7", `
+"@TacControl", `
 "@zeus_enhanced", `
 "@zeus_enhanced-ace3_compatibility"
 
