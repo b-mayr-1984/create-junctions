@@ -32,6 +32,11 @@ if (-not (Test-Path -Path $MainModsFolder) )
 }
 
 # list of junctions for different Arma3 groups
+$RollingThunder_JunctionList = `
+"@cup_terrains_core", `
+"@Gruppe Adler Admin Messages", `
+"@rosche"
+
 $3CB_JunctionList = `
 "@Anizay", `
 "@cup_terrains_core", `
@@ -45,14 +50,36 @@ $3CB_JunctionList = `
 "@ruha", `
 "@vinjesvingen"
 
-$Anrop_JunctionList = `
+$AFI_JunctionList = `
+"@3cb_factions", `
 "@cba_a3", `
-"@diwako_dui", `
+"@cup_terrains_core", `
 "@grad_trenches", `
 "@lambs_danger", `
 "@lambs_suppression", `
+"@vet_unflipping", `
+"@rhs_afrf3", `
+"@rhs_gref", `
+"@rhs_saf", `
+"@rhs_usf3", `
+"@ruha", `
 "@zen", `
 "@zen_compat_ace"
+
+$TTT_JunctionList = `
+"@3CB_Factions", `
+"@ace", `
+"@ace_nouniformrestrictions", `
+"@backpackonchest", `
+"@cba_a3", `
+"@lambs_suppression", `
+"@lythium", `
+"@rhsafrf", `
+"@rhsgref", `
+"@rhspkl", `
+"@rhssaf", `
+"@rhsusaf", `
+"@suppress"
 
 $DAA_JunctionList = `
 "@3CB_Factions", `
@@ -87,7 +114,7 @@ $DAA_JunctionList = `
 
 
 # select which list you actually want to apply here
-$JunctionList = $DAA_JunctionList
+$JunctionList = $RollingThunder_JunctionList
 
 foreach ($DirectoryJunction in $JunctionList)
 {
