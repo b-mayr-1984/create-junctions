@@ -38,16 +38,25 @@ $RollingThunder_JunctionList = `
 "@rosche"
 
 $3CB_JunctionList = `
-"@Anizay", `
+"@3cb_factions", `
+"@3cb_baf_equipment", `
+"@3cb_baf_vehicles", `
+"@3cb_baf_weapons", `
+"@ace", `
 "@cup_terrains_core", `
 "@cup_terrains_maps", `
+"@diwako_dui", `
 "@lythium", `
 "@rhsafrf", `
 "@rhsgref", `
 "@rhssaf", `
 "@rhsusaf", `
+"@TFAR", `
 "@rosche", `
 "@ruha", `
+"@pulau", `
+#"@kujari", `
+#"@virolahti", `
 "@vinjesvingen"
 
 $AFI_JunctionList = `
@@ -114,7 +123,7 @@ $DAA_JunctionList = `
 
 
 # select which list you actually want to apply here
-$JunctionList = $RollingThunder_JunctionList
+$JunctionList = $3CB_JunctionList
 
 foreach ($DirectoryJunction in $JunctionList)
 {
