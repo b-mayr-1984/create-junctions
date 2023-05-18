@@ -31,6 +31,13 @@ if (-not (Test-Path -Path $MainModsFolder) )
     throw '"{0}" does not exist.' -f $MainModsFolder
 }
 
+# Set path to your maps mod folder here
+$MapsModsFolder = "F:\Games\Steam\Arma 3\Mods\Maps"
+if (-not (Test-Path -Path $path) )
+{
+    throw '"{0}" does not exist.' -f $path
+}
+
 # list of junctions for different Arma3 groups
 $RollingThunder_JunctionList = `
 "@cup_terrains_core", `
@@ -38,11 +45,11 @@ $RollingThunder_JunctionList = `
 "@rosche"
 
 $3CB_JunctionList = `
-"@3cb_factions", `
+#"@3cb_factions", `
 "@3cb_baf_equipment", `
 "@3cb_baf_vehicles", `
 "@3cb_baf_weapons", `
-"@ace", `
+#"@ace", `
 "@cup_terrains_core", `
 "@cup_terrains_maps", `
 "@diwako_dui", `
@@ -51,29 +58,34 @@ $3CB_JunctionList = `
 "@rhsgref", `
 "@rhssaf", `
 "@rhsusaf", `
-"@TFAR", `
+#"@TFAR", `
+"@anizay", `
+"@gunkizli", `
+"@hellanmaa", `
+"@kujari", `
+"@Leskovets", `
 "@rosche", `
 "@ruha", `
 "@pulau", `
 #"@kujari", `
-#"@virolahti", `
+"@virolahti", `
 "@vinjesvingen"
 
 $AFI_JunctionList = `
 "@3cb_factions", `
 "@cba_a3", `
 "@cup_terrains_core", `
-"@grad_trenches", `
-"@lambs_danger", `
-"@lambs_suppression", `
+#"@grad_trenches", `
+#"@lambs_danger", `
+#"@lambs_suppression", `
 "@vet_unflipping", `
+#"@ruha", `
+#"@zen", `
+#"@zen_compat_ace", `
 "@rhs_afrf3", `
 "@rhs_gref", `
 "@rhs_saf", `
-"@rhs_usf3", `
-"@ruha", `
-"@zen", `
-"@zen_compat_ace"
+"@rhs_usf3"
 
 $TTT_JunctionList = `
 "@3CB_Factions", `
@@ -124,9 +136,15 @@ $DAA_JunctionList = `
 
 # select which list you actually want to apply here
 $JunctionList = $3CB_JunctionList
+#$JunctionList = Get-ChildItem -Path $MapsModsFolder | select -Property Name
+
 
 foreach ($DirectoryJunction in $JunctionList)
 {
+    if ($DirectoryJunction.PSobject.Properties.name -match "Name")
+    {   # remove Name property if it exists (we don't want a hashtable but plain strings)
+        $DirectoryJunction = $DirectoryJunction.Name
+    }
     if (Test-Path -Path $DirectoryJunction) 
     {
         Write-Host "Keeping already existing junction for:", $DirectoryJunction -ForegroundColor Red
@@ -135,5 +153,6 @@ foreach ($DirectoryJunction in $JunctionList)
     {
         Write-Host "Creating junction for:", $DirectoryJunction -ForegroundColor Green
         New-Item -Path $DirectoryJunction -ItemType Junction -Value $MainModsFolder\$DirectoryJunction
+        #New-Item -Path $DirectoryJunction -ItemType Junction -Value $MapsModsFolder\$DirectoryJunction
     }
 }
