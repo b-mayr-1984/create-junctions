@@ -33,9 +33,9 @@ if (-not (Test-Path -Path $MainModsFolder) )
 
 # Set path to your maps mod folder here
 $MapsModsFolder = "F:\Games\Steam\Arma 3\Mods\Maps"
-if (-not (Test-Path -Path $path) )
+if (-not (Test-Path -Path $MapsModsFolder) )
 {
-    throw '"{0}" does not exist.' -f $path
+    throw '"{0}" does not exist.' -f $MapsModsFolder
 }
 
 # list of junctions for different Arma3 groups
@@ -135,8 +135,8 @@ $DAA_JunctionList = `
 
 
 # select which list you actually want to apply here
-$JunctionList = $3CB_JunctionList
-#$JunctionList = Get-ChildItem -Path $MapsModsFolder | select -Property Name
+#$JunctionList = $3CB_JunctionList
+$JunctionList = Get-ChildItem -Path $MapsModsFolder | select -Property Name
 
 
 foreach ($DirectoryJunction in $JunctionList)
@@ -152,7 +152,7 @@ foreach ($DirectoryJunction in $JunctionList)
     else
     {
         Write-Host "Creating junction for:", $DirectoryJunction -ForegroundColor Green
-        New-Item -Path $DirectoryJunction -ItemType Junction -Value $MainModsFolder\$DirectoryJunction
-        #New-Item -Path $DirectoryJunction -ItemType Junction -Value $MapsModsFolder\$DirectoryJunction
+        #New-Item -Path $DirectoryJunction -ItemType Junction -Value $MainModsFolder\$DirectoryJunction
+        New-Item -Path $DirectoryJunction -ItemType Junction -Value $MapsModsFolder\$DirectoryJunction
     }
 }
