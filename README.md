@@ -8,11 +8,11 @@
    junctions) between folders can be created such that multiple modset folders 
    can share the same files that are on your disk.
 
-   Imagine the mod @rhsusaf is used by your primary group and a lot of other 
+   Imagine the mod `@rhsusaf` is used by your primary group and a lot of other 
    groups you sometimes play with.
    Also imagine that you usually separate modset of different groups in 
-   different folders (e.g. c:\a3_mods\group_A\ and c:\a3_mods\group_B\).
-   Then you can download @rhsusaf just once and use it either modset folder.
+   different folders (e.g. `c:\a3_mods\group_A\` and `c:\a3_mods\group_B\`).
+   Then you can download `@rhsusaf` just once and use it either modset folder.
 
 # Parameters
 
